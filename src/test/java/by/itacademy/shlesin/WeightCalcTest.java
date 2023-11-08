@@ -1,3 +1,5 @@
+package by.itacademy.shlesin;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -14,11 +16,11 @@ public class WeightCalcTest {
         WebElement inputCalculateWebelement = driver.findElement(inputCalculateBy);
         inputCalculateWebelement.click();
 
-        By bGetTextBy = By.xpath("/html/body/table/tbody/tr[2]/td[2]/form/table/tbody/tr[1]/td/b");
-        WebElement bGetText = driver.findElement(bGetTextBy);
+        By bGetWarningTextBy = By.xpath("/html/body/table/tbody/tr[2]/td[2]/form/table/tbody/tr[1]/td/b");
+        WebElement bGetWarningTextWebelement = driver.findElement(bGetWarningTextBy);
 
-        String expectedText = bGetText.getText();
-        String actualText = ("Не указано имя.\nРост должен быть в диапазоне 50-300 см.\nВес должен быть в диапазоне 3-500 кг.\nНе указан пол.");
-        Assertions.assertEquals(expectedText, actualText);
+        String actual = bGetWarningTextWebelement.getText();
+        String expected = ("Не указано имя.\nРост должен быть в диапазоне 50-300 см.\nВес должен быть в диапазоне 3-500 кг.\nНе указан пол.");
+        Assertions.assertEquals(actual, expected);
     }
 }
